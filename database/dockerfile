@@ -1,5 +1,5 @@
 USE library/postgres
 
-MKDIR users/db
+WORKDIR /usr/src/db
 
 COPY init_schema.sql

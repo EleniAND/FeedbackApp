@@ -1,5 +1,3 @@
-create database andi_feedback;
-
 create table club
 (
 	id int primary key
