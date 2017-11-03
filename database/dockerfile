@@ -1,9 +1,9 @@
 FROM library/postgres:latest
 
-RUN mkdir -m 0777 -p /usr/local/postgres
+WORKDIR /var/lib/postgres
 
-RUN useradd -ms /bin/bash dbuser
+RUN chown postgres /var/lib/postgres/
 
-USER dbuser
+USER postgres
 
-RUN initdb /usr/local/postgres/db -E utf8
+RUN initdb --pgdata=/var/lib/postgres/andfeedback -E 'UTF-8' --lc-collate='en_US.UTF-8' --lc-ctype='en_US.UTF-8'
