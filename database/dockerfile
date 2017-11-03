@@ -1,5 +1,9 @@
-USE library/postgres
+FROM library/postgres:latest
 
-WORKDIR /usr/src/db
+RUN mkdir -m 0777 -p /usr/local/postgres
 
-COPY init_schema.sql
+RUN useradd -ms /bin/bash dbuser
+
+USER dbuser
+
+RUN initdb /usr/local/postgres/db -E utf8
