@@ -1,0 +1,5 @@
+USE library/postgres
+
+MKDIR users/db
+
+COPY init_schema.sql
